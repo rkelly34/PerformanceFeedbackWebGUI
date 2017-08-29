@@ -1,0 +1,21 @@
+﻿@using PerformanceFeedbackWebGUI.Models
+@model PerformanceFeedbackWebGUI.Models.Employee
+@{
+    ViewBag.Title = "Login";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Login</h2>
+        @using (Html.BeginForm())
+        {
+            <label>Username</label>
+            @Html.TextBoxFor(model => model.Username)
+            <br/>
+            <label>Password</label>
+            @Html.PasswordFor(model => model.Password)
+            <br/>
+            <input type="submit" value="Login" name="submit" class="submit" />
+        }
+    </div>
+</div>

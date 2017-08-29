@@ -1,0 +1,33 @@
+﻿@using PerformanceFeedbackWebGUI.Models
+@model PerformanceFeedbackWebGUI.Models.AdminEmployee
+@{
+    ViewBag.Title = "Admin";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm())
+        {
+            @Html.EnumDropDownListFor(model => model.adminType)
+            <br />
+            <label>Employee Id</label>
+            @Html.TextBoxFor(model => model.EmployeeId)
+            <br />
+            <label>Username</label>
+            @Html.TextBoxFor(model => model.Username)
+            <br />
+            <label>Employee Name</label>
+            @Html.TextBoxFor(model => model.Name)
+            <br />
+            <label>Administrator</label>
+            @Html.CheckBoxFor(model => model.IsAdmin)
+            <br />
+            <label>Password</label>
+            @Html.TextBoxFor(model => model.Password)
+            <br />
+            <input type="submit" value="Submit" name="Submit" class="submit" />
+        }
+    </div>
+
+</div>

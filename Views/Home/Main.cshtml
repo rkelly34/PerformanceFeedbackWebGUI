@@ -1,0 +1,25 @@
+﻿@using PerformanceFeedbackWebGUI.Models
+@model PerformanceFeedbackWebGUI.Models.Review
+@{
+    ViewBag.Title = "Reviews";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm())
+        {
+            <label>Employee</label>
+            @Html.DropDownListFor(model => model.EmployeeId, new SelectList((System.Collections.IEnumerable)ViewData["EmployeeList"], "Value", "Text"), "Select a value", new { @class = "form-control" })
+            <br />
+            <label>Rating</label>
+            @Html.EnumDropDownListFor(model => model.Rating)
+            <br />
+            <label>Review</label>
+            @Html.TextAreaFor(model => model.ReviewText)
+            <br />
+            <input type="submit" value="Submit" name="Submit" class="submit" />
+        }
+    </div>
+
+</div>
